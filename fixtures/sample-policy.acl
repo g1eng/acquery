@@ -1,0 +1,410 @@
+POLICY_VERSION=20120401
+stat Policy updated: 13365 (Last: 2022/07/15 06:17:17)
+stat Requests denied: 22994 (Last: 2022/07/15 11:04:11)
+stat Memory used by policy: 73408
+stat Memory used by audit: 959264
+stat Memory used by query: 0
+quota memory audit 26777216
+quota memory query 1048576
+quota audit[1] allowed=1024 denied=0 unmatched=0
+quota audit[2] allowed=0 denied=1024 unmatched=0
+quota audit[3] allowed=1024 denied=1024 unmatched=0
+quota audit[4] allowed=0 denied=0 unmatched=1024
+quota audit[5] allowed=1024 denied=0 unmatched=1024
+quota audit[6] allowed=0 denied=1024 unmatched=1024
+quota audit[7] allowed=1024 denied=1024 unmatched=1024
+string_group udom-session user-shell
+string_group udom-session kde
+string_group udom-session <dbus-user>
+string_group userns user-sandbox
+string_group userns ns-sandbox
+string_group u-home /home/\*/\(\*\)/\*
+string_group u-run /run/user/\+\+\+\+
+string_group u-run /run/user/\+\+\+\+/\(\*\)/\*
+string_group u-run /run/utmp
+string_group u-run /var/log/wtmp
+string_group u-sec /home/\*/.ssh/\(\*\)/\*
+string_group u-sec /home/\*/.gnupg/\(\*\)/\*
+string_group u-sec /home/\*/.secret/\(\*\)/\*
+string_group u-critical /home/\*/.profile
+string_group u-critical /home/\*/.shrc
+string_group u-critical /home/\*/.bashrc
+string_group u-critical /home/\*/.bash_profile
+string_group u-critical /home/\*/.vimrc
+string_group u-critical /home/\*/.vim/\(\*\)/\*
+string_group u-critical /home/\*/.emacs.d/\(\*\)/\*
+string_group u-critical /home/\*/.gitconfig
+string_group u-critical /home/\*/.xprofile
+string_group u-critical /home/\*/.xinitrc
+string_group u-gui /home/\*/.gtkrc-\*
+string_group u-gui /home/\*/.kde/\(\*\)/\*
+string_group u-vi /home/\*/.vimrc
+string_group u-vi /home/\*/.vim
+string_group u-vi /home/\*/.vim/\(\*\)/\*
+string_group u-emacs /home/\*/.emacs.d
+string_group u-emacs /home/\*/.emacs.d/\(\*\)/\*
+string_group u-history /home/\*/.history
+string_group u-history /home/\*/.bash_history
+string_group u-history /home/\*/.lesshst
+string_group u-bin /home/\*/bin/\*
+string_group u-bin /home/\*/.local/bin/\*
+string_group u-bin /home/\*/local/bin/\*
+string_group u-doc /home/\*/Documents/\*
+string_group u-doc /home/\*/mbox
+string_group u-doc /home/\*/Mail/\(\*\)/\*
+string_group u-vm /home/\*/VM/\(\*\)/\*
+string_group u-dev /dev/fuse
+string_group u-dev /dev/tty
+string_group u-dev /dev/tty\+
+string_group u-dev /dev/ptmx
+string_group u-dev /dev/null
+string_group b-kernel /\(usr\)/bin/update-initramfs
+string_group b-kernel /\(usr\)/sbin/dracut
+string_group b-systemd /\(usr\)/lib/systemd/systemd
+string_group b-systemd /\(usr\)/lib/systemd/systemd-\*
+string_group b-systemd /\(usr\)/lib/systemd/\*/systemd-\*
+string_group b-systemd /\(usr\)/bin/systemd-\*
+string_group b-systemd /\(usr\)/sbin/systemd-\*
+string_group b-ctl /\(usr\)/bin/systemctl
+string_group b-ctl-deb /\(usr\)/bin/systemctl
+string_group b-ctl-deb /usr/sbin/update-rc.d
+string_group b-ctl-deb /usr/bin/getopt
+string_group b-perl /\(usr\)/bin/perl
+string_group b-python /\(usr\)/bin/python
+string_group b-python /\(usr\)/bin/python3
+string_group b-ruby /\(usr\)/bin/ruby
+string_group b-nw /usr/bin/ip
+string_group b-nw /sbin/ifconfig
+string_group b-nw /usr/sbin/ifconfig
+string_group b-nw /sbin/brctl
+string_group b-nw /usr/sbin/brctl
+string_group b-mon /\(usr\)/bin/lsof
+string_group b-mon /\(usr\)/bin/netstat
+string_group b-mon /\(usr\)/bin/tcpdump
+string_group b-fs /\(usr\)/bin/btrfs
+string_group b-fs /\(usr\)/sbin/mkfs
+string_group b-fs /\(usr\)/sbin/mkfs.\*
+string_group b-fs /\(usr\)/sbin/lvm
+string_group b-fs /\(usr\)/sbin/lvcreate
+string_group b-fs /\(usr\)/sbin/lvremove
+string_group b-fs /\(usr\)/sbin/lvchange
+string_group b-fs /\(usr\)/sbin/lvextend
+string_group b-fs /\(usr\)/sbin/vgcreate
+string_group b-fs /\(usr\)/sbin/vgchange
+string_group b-fs /\(usr\)/sbin/vgextend
+string_group b-fs /\(usr\)/sbin/vgremove
+string_group b-fs /\(usr\)/sbin/pvcreate
+string_group b-fs /\(usr\)/sbin/pvchange
+string_group b-fs /\(usr\)/sbin/pvremove
+string_group b-shell /\(usr\)/bin/sh
+string_group b-shell /\(usr\)/bin/bash
+string_group b-shell /\(usr\)/bin/dash
+string_group b-shell /\(usr\)/bin/zsh
+string_group b-shell /\(usr\)/bin/ksh
+string_group b-shell /\(usr\)/bin/busybox
+string_group b-shell /\(usr\)/bin/csh
+string_group b-shell /\(usr\)/bin/ash
+string_group b-shell /\(usr\)/bin/fish
+string_group b-pkg /\(usr\)/bin/apt
+string_group b-pkg /\(usr\)/bin/apt-\*
+string_group b-pkg /\(usr\)/bin/aptitude
+string_group b-pkg /\(usr\)/bin/dpkg
+string_group b-pkg /\(usr\)/bin/dpkg-\*
+string_group b-pkg /\(usr\)/sbin/dpkg-\*
+string_group b-editor /\(usr\)/bin/emacs
+string_group b-editor /\(usr\)/bin/vi
+string_group b-editor /\(usr\)/bin/vim
+string_group b-editor /\(usr\)/bin/nano
+string_group b-editor /\(usr\)/bin/qemacs
+string_group b-editor /\(usr\)/bin/jed
+string_group b-editor /\(usr\)/sbin/visudo
+string_group b-editor /\(usr\)/bin/vim.basic
+string_group b-editor /\(usr\)/bin/vim.tiny
+string_group b-emacs /\(usr\)/bin/emacs
+string_group b-vi /\(usr\)/bin/vi
+string_group b-vi /\(usr\)/bin/vim
+string_group b-vi /\(usr\)/bin/vim.basic
+string_group b-vi /\(usr\)/bin/vim.tiny
+string_group b-boot /\(usr\)/bin/grub-\*
+string_group b-pager /\(usr\)/bin/less
+string_group b-pager /\(usr\)/bin/more
+string_group b-pager /\(usr\)/bin/cat
+string_group b-pager /\(usr\)/bin/head
+string_group b-pager /\(usr\)/bin/tail
+string_group b-fetcher /\(usr\)/bin/curl
+string_group b-fetcher /\(usr\)/bin/wget
+string_group b-fetcher /\(usr\)/bin/git
+string_group b-fetcher /\(usr\)/bin/rsync
+string_group b-vm /\(usr\)/bin/qemu-\*
+string_group s-boot /boot/\(\*\)/\*
+string_group s-path /\(usr\)/bin/\*
+string_group s-path /\(usr\)/sbin/\*
+string_group s-path /\(usr\)/libexec/\(\*\)/\*
+string_group s-lib /\(usr\)/lib/\(\*\)/\*
+string_group s-lib /\(usr\)/lib64/\(\*\)/\*
+string_group s-usr /usr/\(\*\)/\*
+string_group s-shared /usr/share/\(\*\)/\*
+string_group s-include /usr/include/\(\*\)/\*
+string_group s-src /usr/src/\(\*\)/\*
+string_group s-usrlocal /usr/local/\(\*\)/\*
+string_group s-conf /etc/\(\*\)/\*
+string_group s-conf-cntrl /etc/cups/\*
+string_group s-log /var/log/\(\*\)/\*
+string_group s-mail-log /var/log/exim4/\(\*\)/\*
+string_group s-spool /var/spool/\(\*\)/\*
+string_group s-mail-spool /var/spool/exim4/\(\*\)/\*
+string_group s-mail-spool /var/mail/\(\*\)/\*
+string_group k-tmp /tmp/\(\*\)/\*
+string_group k-shm /dev/shm/\(\*\)/\*
+string_group k-proc /proc:\$/\(\*\)/\*
+string_group d-nw /usr/sbin/NetworkManager
+string_group d-nw /usr/bin/docker-proxy
+string_group d-nw /usr/bin/libvirtd
+string_group d-nw /lib/systmed/systemd-networkd
+number_group uid-system 1-999
+number_group uid-normal 1000-2000
+ip_group LOOPBACK 127.0.0.0-127.255.255.255
+ip_group LOOPBACK ::1
+ip_group LOCALNET 10.0.0.0-10.255.255.255
+ip_group LOCALNET 172.16.0.0-172.31.255.255
+ip_group LOCALNET 192.168.0.0-192.168.255.255
+ip_group LOCALNET fd00::-fdff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
+ip_group LINKLOCAL 169.254.0.0-169.254.255.255
+ip_group LINKLOCAL fe80::-fe80::ffff:ffff:ffff:ffff
+ip_group MULTICAST 224.0.0.0-224.255.255.255
+ip_group MULTICAST ff02::1
+ip_group MULTICAST ff02::2
+ip_group MULTICAST ff02::9
+ip_group MULTICAST ff02::fb
+ip_group MULTICAST ff05::101
+
+1000 acl execute
+    audit 2
+    10 allow task.uid=@uid-normal task.exe=@b-shell transition="user-shell" task.domain!=@userns
+
+1029 acl execute path=@b-vm
+    audit 6
+    0 allow task.uid=@uid-normal transition="<vm>"
+
+1029 acl read path=@u-vm
+    audit 6
+    0 allow task.domain="<vm>"
+    0 allow task.exe=@b-ops
+
+20 acl write path="/etc/.resolv.conf\*"
+    audit 2
+    1 allow task.exe=@d-nw
+
+1000 acl write task.uid!=@kid task.domain!=@userns
+    audit 2
+    10 allow task.uid=@uid-normal path=@u-home path!=@u-doc
+    10 allow task.uid=@uid-normal path=@u-doc task.exe=@b-editor
+    10 allow task.uid=@uid-normal path=@u-sec task.exe=@b-editor
+    100 deny path=@u-home
+
+1002 acl write task.domain=@udom-session path!=@u-home
+    audit 2
+    0 allow path=@u-run
+    0 allow path=@k-shm
+    0 allow path=@k-tmp
+    0 allow path=@k-proc
+    0 allow path=@u-dev
+    0 allow path="devpts:/\$"
+    0 allow path="proc:/\(\*\)/\*"
+    10 deny
+
+1029 acl write path=@u-vm
+    audit 6
+    0 allow task.domain="<vm>"
+
+20 acl append path="/etc/.resolv.conf\*"
+    audit 2
+    1 allow task.exe=@d-nw
+    2 allow task.domain=@userns
+
+902 acl append task.domain="<mta>"
+    audit 2
+    10 allow path=@s-mail-spool
+    10 allow path=@s-mail-log
+
+1010 acl append
+    audit 2
+    0 deny path=@u-bin
+    0 allow path=@u-emacs task.exe=@b-emacs
+    0 allow path=@u-vi task.exe=@b-vi
+    1 deny path=@u-critical
+
+2020 acl append task.domain=@userns
+    audit 0
+    10 allow task.uid=@uid-userns
+
+902 acl create task.domain="<mta>"
+    audit 2
+    10 allow path=@s-mail-spool
+    10 allow path=@s-mail-log
+
+1002 acl create task.domain=@udom-session
+    audit 2
+    0 allow path=@u-run
+    0 allow path=@k-shm
+    0 allow path=@k-tmp
+    0 allow path=@k-proc
+    1 deny
+
+1010 acl create
+    audit 2
+    0 deny path=@u-bin
+    0 allow path=@u-emacs task.exe=@b-emacs
+    0 allow path=@u-vi task.exe=@b-vi
+    2 deny path=@u-critical
+
+1029 acl create path=@u-vm
+    audit 6
+    0 allow task.domain="<vm>"
+
+2020 acl create task.domain=@userns
+    audit 0
+    10 allow task.uid=@uid-userns
+
+902 acl unlink task.domain="<mta>"
+    audit 2
+    10 allow path=@s-mail-spool
+
+1000 acl unlink task.uid!=@kid
+    audit 2
+    10 allow task.uid=@uid-normal path=@u-home path!=@u-doc
+    10 allow task.uid=@uid-normal path=@u-doc task.exe=@b-editor
+    10 allow task.uid=@uid-normal path=@u-sec task.exe=@b-editor
+    100 deny path=@u-home
+
+1002 acl unlink task.domain=@udom-session
+    audit 2
+    0 allow path=@u-run
+    0 allow path=@k-shm
+    0 allow path=@k-tmp
+    0 allow path=@k-proc
+    1 deny
+
+1010 acl unlink
+    audit 2
+    0 deny path=@u-bin
+    0 allow path=@u-emacs task.exe=@b-emacs
+    0 allow path=@u-vi task.exe=@b-vi
+    2 deny path=@u-critical
+
+1029 acl unlink path=@u-vm
+    audit 6
+    0 allow task.domain="<vm>"
+
+2020 acl unlink task.domain=@userns
+    audit 0
+    10 allow task.uid=@uid-userns
+
+1000 acl truncate
+    audit 2
+    10 allow task.uid=@uid-normal path=@u-home path!=@u-doc
+    10 allow task.uid=@uid-normal path=@u-doc task.exe=@b-editor
+    10 allow task.uid=@uid-normal path=@u-sec task.exe=@b-editor
+    100 deny path=@u-home
+
+902 acl link task.domain="<mta>"
+    audit 2
+    10 allow old_path=@s-mail-spool new_path=@s-mail-spool
+
+1010 acl rename
+    audit 2
+    0 allow task.exe=@b-emacs
+    0 allow task.exe=@b-vi
+    2 deny new_path=@u-critical
+    2 deny old_path=@u-critical
+    2 deny new_path=@u-bin
+    2 deny old_path=@u-bin
+
+1029 acl rename
+    audit 2
+    0 deny new_path=@u-vm
+    0 deny old_path=@u-vm
+
+1001 acl chmod path="/home/\*"
+    audit 2
+    0 deny
+
+1002 acl chmod task.domain=@udom-session path!=@u-home
+    audit 2
+    0 allow path=@u-run
+    0 allow path=@k-shm
+    0 allow path=@k-tmp
+    0 allow path=@k-proc
+    0 allow path="devpts:/\$"
+    1 deny
+
+1010 acl chmod
+    audit 2
+    0 deny path=@u-bin
+    0 deny path=@u-critical
+
+2020 acl chmod task.domain=@userns
+    audit 0
+    10 allow task.uid=@uid-userns
+
+902 acl chown task.domain="<mta>"
+    audit 2
+    10 allow path=@s-mail-spool
+
+1001 acl chown path="/home/\*"
+    audit 2
+    0 deny
+
+1002 acl chown task.domain=@udom-session path!=@u-home
+    audit 2
+    0 allow path=@u-run
+    0 allow path=@k-shm
+    0 allow path=@k-tmp
+    0 allow path=@k-proc
+    1 deny
+
+1010 acl chown
+    audit 2
+    0 deny path=@u-bin
+    0 deny path=@u-critical
+
+902 acl chgrp task.domain="<mta>"
+    audit 2
+    10 allow path=@s-mail-spool
+
+1001 acl chgrp path="/home/\*"
+    audit 2
+    0 deny
+
+1002 acl chgrp task.domain=@udom-session path!=@u-home
+    audit 2
+    0 allow path=@u-run
+    0 allow path=@k-shm
+    0 allow path=@k-tmp
+    0 allow path=@k-proc
+    1 deny path!=@u-home
+
+3011 acl inet_stream_connect
+    audit 4
+    10 allow ip=@LOOPBACK
+    10 allow ip=@LOCALNET
+    20 deny
+
+902 acl inet_dgram_send task.domain="<mta>"
+    audit 2
+    0 allow ip=@LOOPBACK
+    1 deny
+
+3011 acl inet_dgram_send
+    audit 4
+    10 allow ip=@LOOPBACK
+    10 allow ip=@LOCALNET
+    10 allow ip=@LINKLOCAL
+    10 allow ip=@MULTICAST port=5353
+    20 deny
+
+0 acl modify_policy
+    audit 2
+    1 allow task.uid=0 task.euid=0
+    10000 deny
+

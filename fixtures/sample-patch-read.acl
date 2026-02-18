@@ -1,0 +1,3 @@
+9008 acl read path="/home/\*/cd.sh"
+    audit 0
+    100 deny

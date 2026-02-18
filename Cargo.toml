@@ -1,0 +1,17 @@
+[package]
+name = "acquery"
+version = "0.3.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+homepage = "https://github.com/g1eng/acquery"
+repository = "https://github.com/g1eng/acquery"
+description = "an alternative policy management interface for caitsith"
+
+[dependencies]
+serde = { version = "1.0.219", features = ["derive"] }
+aclneko = { version = "0.16.7" }
+serde_json = "1.0.91"
+console = "0.16.2"
+regex = "1.12.3"
+nix = { version = "0.31.1", features = ["poll"] }
+clap = { version = "4.5.57", features = ["derive"] }

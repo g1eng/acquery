@@ -1,0 +1,14 @@
+1000 acl execute task.uid=@normal-uid
+    audit 0
+    10 allow task.uid=@normal-uid       task.domain="<agetty>"      transition="user-session"
+    10 allow task.uid=@normal-uid       task.domain="<systemd>"     transition="user-session"
+    10 allow task.exe="/usr/sbin/exim4" task.domain="user-session"  transition="u-exim4"
+    10 allow task.exe=@terminal         task.domain="user-session"  transition="user-terminal"
+    10 allow                            task.domain="user-terminal" transition="user-direct"
+    20 deny path=@u-savoir              task.uid!=@normal-uid task.exe!=@vi     task.domain!="user-direct"
+    20 deny path=@u-savoir              task.uid!=@normal-uid task.exe!=@vi     task.domain!="user-direct"
+    30 allow path=@mta-path             task.domain=@mta-dom
+    40 deny path=@u-mail                path.uid!=task.uid task.exe!=@mailer    task.domain!="user-direct"
+    40 allow  path="/some/path/\X"
+    40 allow  path="../../\*"
+    50 allow path="/usr/lib/systemd/systemd" task.uid=1000-3000       task.domain!="user-system"
